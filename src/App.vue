@@ -5,6 +5,7 @@ import useCart from "./useCart";
 import TodoList from "./components/TodoList.vue";
 import Form from "./components/Form.vue";
 import Profile from "./components/Profile.vue";
+import Cart from "./components/Cart.vue";
 
 const message = ref("Hello World!");
 
@@ -49,6 +50,10 @@ addProduct([
 
   <!-- Creating reactive reference from reactive object -->
   <Profile />
+  <hr />
+
+  <!-- Computed Properties -->
+  <Cart />
 </template>
 
 <style scoped></style>
