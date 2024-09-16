@@ -3,6 +3,7 @@ import { ref } from "vue";
 import CartItem from "./components/CartItem.vue";
 import useCart from "./useCart";
 import TodoList from "./components/TodoList.vue";
+import Form from "./components/Form.vue";
 
 const message = ref("Hello World!");
 
@@ -40,6 +41,9 @@ addProduct([
   <!-- Creating reactive reference with the ref function -->
   <TodoList />
   <hr />
+
+  <!-- Creating reactive object with the reactive function -->
+  <Form />
 </template>
 
 <style scoped></style>
