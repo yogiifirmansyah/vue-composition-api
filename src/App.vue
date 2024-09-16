@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import CartItem from "./components/CartItem.vue";
 import useCart from "./useCart";
+import TodoList from "./components/TodoList.vue";
 
 const message = ref("Hello World!");
 
@@ -34,6 +35,11 @@ addProduct([
   {{ message }}
 
   <CartItem v-for="item in items" :key="item.id" :cart-item="item" @remove-product="removeProduct" />
+  <hr />
+
+  <!-- Creating reactive reference with the ref function -->
+  <TodoList />
+  <hr />
 </template>
 
 <style scoped></style>
