@@ -36,8 +36,12 @@ addProduct(products);
 
 const cart = ref([]);
 
-const handleAddToCart = (product) => {
-  cart.value.push(product); // Menambahkan produk ke keranjang
+const handleAddToCart = (product, callback) => {
+  // Menjalankan logika di parent, lalu memanggil callback dengan status
+  setTimeout(() => {
+    cart.value.push(product); // Menambahkan produk ke keranjang
+    callback("SUCCESS!!");
+  }, 1000);
 };
 </script>
 

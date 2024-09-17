@@ -13,7 +13,9 @@ const emit = defineEmits(["add-to-cart"]);
 const addToCart = () => {
   // Emit event ke parent dengan membawa data produk
   // console.log("props.product: ", props.product);
-  emit("add-to-cart", props.product);
+  emit("add-to-cart", props.product, (status) => {
+    alert(`${status} Product added to cart.`);
+  });
 };
 
 const product = toRef(props.product);
