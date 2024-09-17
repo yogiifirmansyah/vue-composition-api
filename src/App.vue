@@ -6,6 +6,7 @@ import TodoList from "./components/TodoList.vue";
 import Form from "./components/Form.vue";
 import Profile from "./components/Profile.vue";
 import Cart from "./components/Cart.vue";
+import Search from "./components/Search.vue";
 
 const message = ref("Hello World!");
 
@@ -54,6 +55,11 @@ addProduct([
 
   <!-- Computed Properties -->
   <Cart />
+  <hr />
+
+  <!-- Working with watch and watchEffect -->
+  <Search />
+  <hr />
 </template>
 
 <style scoped></style>
