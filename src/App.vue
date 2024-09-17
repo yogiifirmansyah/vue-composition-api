@@ -7,12 +7,9 @@ import Form from "./components/Form.vue";
 import Profile from "./components/Profile.vue";
 import Cart from "./components/Cart.vue";
 import Search from "./components/Search.vue";
+import ProductDetail from "./components/ProductDetail.vue";
 
-const message = ref("Hello World!");
-
-const { items, addProduct, removeProduct } = useCart();
-
-addProduct([
+const products = [
   {
     id: 1,
     name: "Product One",
@@ -31,7 +28,13 @@ addProduct([
     price: 30,
     quantity: 1,
   },
-]);
+];
+
+const message = ref("Hello World!");
+
+const { items, addProduct, removeProduct } = useCart();
+
+addProduct(products);
 </script>
 
 <template>
@@ -59,6 +62,11 @@ addProduct([
 
   <!-- Working with watch and watchEffect -->
   <Search />
+  <hr />
+
+  <!-- Working with props -->
+  <h1>Product List</h1>
+  <ProductDetail v-for="(product, index) in products" :key="index" :product="product" />
   <hr />
 </template>
 
