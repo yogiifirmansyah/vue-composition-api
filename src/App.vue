@@ -30,17 +30,18 @@ const products = [
   },
 ];
 
-const message = ref("Hello World!");
-
 const { items, addProduct, removeProduct } = useCart();
 
 addProduct(products);
+
+const cart = ref([]);
+
+const handleAddToCart = (product) => {
+  cart.value.push(product); // Menambahkan produk ke keranjang
+};
 </script>
 
 <template>
-  <input type="text" v-model="message" />
-  {{ message }}
-
   <CartItem v-for="item in items" :key="item.id" :cart-item="item" @remove-product="removeProduct" />
   <hr />
 
@@ -64,9 +65,13 @@ addProduct(products);
   <Search />
   <hr />
 
-  <!-- Working with props -->
+  <!-- Working with props && Emitting events -->
   <h1>Product List</h1>
-  <ProductDetail v-for="(product, index) in products" :key="index" :product="product" />
+  <ProductDetail v-for="(product, index) in products" :key="index" :product="product" @add-to-cart="handleAddToCart" />
+  <h2>Shopping Cart</h2>
+  <ul>
+    <li v-for="(item, index) in cart" :key="index">{{ item.name }} - ${{ item.price }}</li>
+  </ul>
   <hr />
 </template>
 

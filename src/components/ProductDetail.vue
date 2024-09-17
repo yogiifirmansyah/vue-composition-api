@@ -8,6 +8,14 @@ const props = defineProps({
   },
 });
 
+const emit = defineEmits(["add-to-cart"]);
+
+const addToCart = () => {
+  // Emit event ke parent dengan membawa data produk
+  // console.log("props.product: ", props.product);
+  emit("add-to-cart", props.product);
+};
+
 const product = toRef(props.product);
 console.log(product);
 </script>
@@ -16,6 +24,7 @@ console.log(product);
   <div class="product-detail">
     <h2>{{ product.name }}</h2>
     <p>Price: ${{ product.price }}</p>
+    <button @click="addToCart">Add to Cart</button>
   </div>
 </template>
 
