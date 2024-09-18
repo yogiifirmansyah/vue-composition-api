@@ -8,6 +8,8 @@ import Profile from "./components/Profile.vue";
 import Cart from "./components/Cart.vue";
 import Search from "./components/Search.vue";
 import ProductDetail from "./components/ProductDetail.vue";
+import ProductList from "./components/TaskList.vue";
+import TaskList from "./components/TaskList.vue";
 
 const products = [
   {
@@ -77,6 +79,9 @@ const handleAddToCart = (product, callback) => {
     <li v-for="(item, index) in cart" :key="index">{{ item.name }} - ${{ item.price }}</li>
   </ul>
   <hr />
+
+  <!-- Lifecycle Hooks -->
+  <TaskList />
 </template>
 
 <style scoped></style>
